@@ -1,0 +1,299 @@
+/* GENERAL STYLING */
+body {
+    margin:0%;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 3%;
+    color: #e27d60;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+.white-text {
+    color: #fff;
+}
+
+p {
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 8px #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: #474853;
+}
+
+q {
+    font-style: italic;
+    font-size: 20px;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img:hover {
+    transition: transform 1s;
+    transform: scale (1.1);
+}
+
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+footer {
+    padding: 1%;
+    background-color: #e8a87c;
+}
+
+/**** END OF GENERAL STYLING ***********/
+
+/**** NAV STYLE ****/
+.Navbar {
+    overflow: hidden;
+    background-color: #e8a87c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 3s;
+    animation: moveNav 3s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left:0vw;}
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 3.75s;
+    animation: moveNavText 3.75s; 
+}
+
+@keyframes moveNavtext {
+    from {left: -100vw;}
+    to {left:0vw;}
+}
+
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+.Navbar a:hover {
+    background-color: #e27d60;
+    color: #e8a87c;
+    font-weight: bold;
+}
+
+/*** END OF NAVBAR ***/
+
+/***VIDEO**/
+#Typing_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+.Video_Text {
+    background: rgba(244,234,210,.6);
+    color: #474853;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    -webkit-animation: moveVideoText 3s;
+    animation: moveVideoText 3s;
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top:0vw;}
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/** TABLE STYLING **/
+
+.button {
+    background-color: #7395ae;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+    font-size: 10px; 
+}
+
+.Column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 500px;
+    background-color: #f4ead2;
+}
+
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+    }
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    padding-top: 1.9%;
+    height: 500px;
+    background-color: #f4ead2;
+}
+
+.Column_img1 {
+    background: url(../Images/about_me_image.png)no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .Column_img1 {
+        background-size: contain;
+        background-color: #e27d60;
+    }
+}
+
+.Column_img2 {
+    background: url(../Images/github.png)no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .Column_img2 {
+        background-size: contain;
+        background-color: #e27d60;
+    }
+}
+
+.Column_img3 {
+    background: url(../Images/contact_me.png)no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .Column_img3 {
+        background-size: contain;
+        background-color: #e27d60;
+    }
+}
+
+.Column_tall {
+    padding-top: 3.5%;
+    height: 550px;
+}
+
+.Row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/** CONTACT FORM **/
+input[type=text] {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+input[type=text]:hover {
+    box-shadow: 0 0 5px #000 inset;
+}
+
+input[type=submit] {
+    background-color: #e27d60; 
+    color: white; 
+    font-weight: bold; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+input[type=submit]:hover {
+    background-color: #e8a87c;
+    color: #fff;
+    transform: scale (1.5);
+    transition: transform 1.5s;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #f4ead2;
+    padding: 10px;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+label {
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+/** END OF FORM **/
