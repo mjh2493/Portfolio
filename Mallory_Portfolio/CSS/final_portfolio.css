@@ -1,6 +1,20 @@
 /* GENERAL STYLING */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin:0%;
+    opacity: 1;
+    transition: 3s opacity;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body.fade-out {
+    opacity: .1;
 }
 
 h1 {
@@ -18,15 +32,16 @@ h1:hover {
 
 .white-text {
     color: #fff;
+    padding-top: 10vh;
 }
 
 p {
     font-family: 'Calibri', Arial, Helvetica, sans-serif;
     text-align: justify;
-    font-size: 16px;
+    font-size: 1.25vw;
     line-height: 1.5;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 .text-shadow {
@@ -39,11 +54,13 @@ p {
 
 a {
     color: #474853;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 q {
     font-style: italic;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 img {
@@ -95,10 +112,10 @@ footer {
     float: left;
     display: block;
     color: #fff;
-    padding: 14px 16px;
+    padding: .75vw 1vw;
     text-decoration: none;
     font-family: 'Calibri', Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
     -webkit-animation: moveNavText 3.75s;
@@ -121,6 +138,7 @@ footer {
     background-color: #e27d60;
     color: #e8a87c;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /*** END OF NAVBAR ***/
@@ -144,7 +162,8 @@ footer {
     background: rgba(244,234,210,.6);
     color: #474853;
     width: 100%;
-    padding: 20px;
+    height: auto;
+    padding: 2vh;
     position: relative;
     -webkit-animation: moveVideoText 3s;
     animation: moveVideoText 3s;
@@ -159,7 +178,107 @@ footer {
     box-sizing: border-box;
 }
 
+/** SLIDESHOW STYLING **/
+#Slideshow_Background {
+    background: #f4ead2;
+}
+
+.mySlides {
+    display: none;
+}
+
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.Slideshow_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(226,125,96,.6);
+    width: 100%;
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: #7395ae;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(244,234,210,.6);
+    color: #e27d60;
+}
+
+.text {
+    color: #e27d60;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    background-color: rgba(244,234,210,.8);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: #e8a87c;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: #e27d60;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+
 /** TABLE STYLING **/
+
+* {
+    box-sizing: border-box;
+}
 
 .button {
     background-color: #7395ae;
@@ -248,52 +367,101 @@ footer {
 }
 
 /** CONTACT FORM **/
-input[type=text] {
+
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    width: 25vw;
+    background-color: #f4ead2;
+    color: #e27d60;
+    border: solid #e27d60;
+    cursor: pointer;
+    -webkit-animation: movePopup 3.75s;
+    animation: movePopup 3.75s;
+}
+
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    border: 3px solid #e27d60;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color:#f4ead2;
+    color: #e27d60
+}
+
+.form-container input[type=text] {
     width: 100%;
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0; 
+    border: none;
+    background: whitesmoke;
+    font-size: 1vw;
     font-family: 'Calibri', Arial, Helvetica, sans-serif;
 }
 
 input[type=text]:hover {
-    box-shadow: 0 0 5px #000 inset;
+    box-shadow: 0 0 5px #e27d60 inset;
 }
 
-input[type=submit] {
-    background-color: #e27d60; 
+button {
+    background-color: #e27d60;
+    font-size: 1.5vw; 
     color: white; 
-    font-weight: bold; 
-    padding: 12px 20px; 
+    font-weight: bold;
+    width: 100%;
+    padding: 1.5vw; 
     border: none; 
     border-radius: 4px; 
     cursor: pointer; 
     display: block; 
-    margin-left: auto; 
-    margin-right: auto;
     font-family: 'Calibri', Arial, Helvetica, sans-serif;
 }
 
-input[type=submit]:hover {
+button:hover, .form-container .btn:hover {
+    color: white;
     background-color: #e8a87c;
-    color: #fff;
-    transform: scale (1.5);
-    transition: transform 1.5s;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
 }
 
-form {
-    border-radius: 5px;
-    background-color: #f4ead2;
-    padding: 10px;
-    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+.form-container .btn {
+    background-color: #e27d60;
+    color: white;
+    border-color: white;
+    margin-bottom: 1vh;
 }
 
-label {
-    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+.form-container .cancel {
+    background-color: #C38D9E;
+    color: white;
+    border-color: #e27d60
+}
+
+.form-container .cancel:hover {
+    color: white;
+    background-color: #e8a87c;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
 }
 
 /** END OF FORM **/
